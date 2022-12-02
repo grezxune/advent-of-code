@@ -30,4 +30,6 @@ pub fn run() {
     sums.reverse();
 
     println!("MAX: {}", sums[0]);
+
+    println!("MAX 3: {}", sums[0] + sums[1] + sums[2]);
 }

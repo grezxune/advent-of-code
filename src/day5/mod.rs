@@ -94,9 +94,8 @@ fn move_one(stacks: &mut Vec<Vec<char>>, command: &Command) {
 fn move_all(stacks: &mut Vec<Vec<char>>, command: &Command) {
     let amount = command.amount as usize;
     let from_stack = stacks[(command.from - 1) as usize].clone();
-    let from_stack_len = from_stack.len();
 
-    let (new_from, new_addition) = from_stack.split_at(from_stack_len - amount);
+    let (new_from, new_addition) = from_stack.split_at(from_stack.len() - amount);
 
     stacks[(command.from - 1) as usize].clear();
     stacks[(command.from - 1) as usize].append(&mut new_from.to_vec());
